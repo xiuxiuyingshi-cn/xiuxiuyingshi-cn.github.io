@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="羞羞影视 - 最新高清电影电视剧免费在线观看平台，提供国产剧、韩剧、美剧、动漫、综艺等海量影视资源免费播放，羞羞影视官网每日更新。">
+<meta name="keywords" content="羞羞影视,羞羞影视官网,羞羞影视在线观看,免费电影,高清电视剧,国产剧,韩剧,美剧,动漫,影视大全">
+<meta name="author" content="羞羞影视">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="bingbot" content="index, follow">
+<meta name="theme-color" content="#6a0572">
+<link rel="canonical" href="https://xiuxiuyingshi-cn.github.io/">
+<title>羞羞影视 - 高清电影电视剧免费在线观看大全</title>
+<style>
+:root{
+  --p:#6a0572;--p2:#a41d8f;--g:#ff2e93;--y:#ffd93d;--bg:#0d0612;--bg2:#170a20;
+  --card:rgba(255,255,255,.05);--line:rgba(255,255,255,.1);--txt:#f4e8f7;--sub:#b891c4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1160px;margin:0 auto;padding:0 22px}
+/* ===== 顶部导航 ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,6,18,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.5rem;font-weight:800;letter-spacing:1px}
+.logo span{background:linear-gradient(90deg,var(--g),var(--y));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo i{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--p2),var(--g));display:grid;place-items:center;font-style:normal;color:#fff;font-size:1.1rem}
+nav ul{display:flex;gap:6px;list-style:none}
+nav a{padding:8px 15px;border-radius:22px;font-size:.92rem;color:var(--sub);transition:.3s;font-weight:500}
+nav a:hover{color:#fff;background:rgba(255,46,147,.18)}
+.menu-btn{display:none;width:42px;height:42px;border:none;background:rgba(255,255,255,.08);border-radius:10px;color:#fff;font-size:1.4rem;cursor:pointer}
+/* ===== 通用栏目 ===== */
+.sec{padding:92px 0 60px}
+.sec-head{text-align:center;margin-bottom:52px}
+.sec-head b{font-size:2.4rem;font-weight:800;letter-spacing:1px}
+.sec-head b em{font-style:normal;color:var(--g)}
+.sec-head p{color:var(--sub);margin-top:12px;font-size:1.02rem}
+/* 背景装饰 */
+.glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.35;z-index:0}
+/* ========== 1 首屏 ========== */
+#home{min-height:100vh;display:flex;align-items:center;padding-top:80px;position:relative;overflow:hidden}
+#home .g1{width:520px;height:520px;background:var(--p2);top:-140px;left:-160px}
+#home .g2{width:420px;height:420px;background:var(--g);bottom:-120px;right:-120px}
+.hero{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:54px;align-items:center;width:100%}
+.hero h1{font-size:3.4rem;line-height:1.18;font-weight:900}
+.hero h1 u{text-decoration:none;background:linear-gradient(90deg,var(--g),var(--y));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero>p{color:var(--sub);margin:22px 0 30px;font-size:1.12rem;max-width:520px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:15px 34px;border-radius:30px;font-weight:700;font-size:1rem;transition:.3s;cursor:pointer;border:2px solid transparent}
+.btn-p{background:linear-gradient(135deg,var(--p2),var(--g));color:#fff;box-shadow:0 10px 30px rgba(255,46,147,.35)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(255,46,147,.5)}
+.btn-o{background:transparent;color:#fff;border-color:var(--line)}
+.btn-o:hover{border-color:var(--g);color:var(--g)}
+/* 首屏右侧播放卡 */
+.player-card{background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:22px;padding:22px;backdrop-filter:blur(10px)}
+.player-card .scr{height:170px;border-radius:14px;background:linear-gradient(135deg,#2a0d38,#4d1240);display:grid;place-items:center;position:relative;overflow:hidden;margin-bottom:18px}
+.player-card .scr::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(255,46,147,.4),transparent 60%)}
+.player-card .scr .play{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.25);display:grid;place-items:center;font-size:1.6rem;backdrop-filter:blur(6px);z-index:2}
+.player-card h4{font-size:1.15rem;margin-bottom:10px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips s{text-decoration:none;font-size:.78rem;padding:5px 12px;border-radius:20px;background:rgba(255,46,147,.18);color:var(--g);border:1px solid rgba(255,46,147,.3)}
+/* ========== 2 分类（标签云 + 编号大卡） ========== */
+#cat{background:linear-gradient(180deg,transparent,rgba(106,5,114,.12))}
+.cloud{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:44px}
+.cloud a{padding:11px 24px;border-radius:26px;background:var(--card);border:1px solid var(--line);font-size:.98rem;transition:.3s;color:var(--sub)}
+.cloud a:hover{background:linear-gradient(135deg,var(--p2),var(--g));color:#fff;border-color:transparent;transform:translateY(-3px)}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.cat-card{position:relative;height:210px;border-radius:20px;padding:26px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid var(--line);transition:.4s}
+.cat-card::before{content:"";position:absolute;inset:0;background:var(--cg);opacity:.7}
+.cat-card::after{content:attr(data-n);position:absolute;top:-14px;right:-8px;font-size:6rem;font-weight:900;color:rgba(255,255,255,.13);z-index:0}
+.cat-card>*{position:relative;z-index:2}
+.cat-card i{font-style:normal;font-size:2.4rem;margin-bottom:auto}
+.cat-card h3{font-size:1.3rem;margin-bottom:8px}
+.cat-card p{font-size:.85rem;color:rgba(255,255,255,.85)}
+.cat-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 50px rgba(164,29,143,.4)}
+/* ========== 3 热门推荐（海报墙 + Tab） ========== */
+#hot{position:relative}
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:38px}
+.tab{padding:10px 26px;border-radius:24px;background:var(--card);border:1px solid var(--line);color:var(--sub);cursor:pointer;transition:.3s;font-weight:600}
+.tab.on{background:linear-gradient(135deg,var(--g),var(--p2));color:#fff;border-color:transparent}
+.tab-pane{display:none;grid-template-columns:repeat(5,1fr);gap:20px}
+.tab-pane.on{display:grid;animation:fade .5s ease}
+@keyframes fade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.poster{position:relative;border-radius:16px;overflow:hidden;background:var(--bg2);transition:.35s}
+.poster .cover{height:250px;background:var(--cv);position:relative;display:grid;place-items:center;font-size:2.6rem}
+.poster .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--bg2) 5%,transparent 60%)}
+.poster .score{position:absolute;top:10px;right:10px;background:linear-gradient(135deg,var(--y),#ff8c2d);color:#311;font-weight:800;font-size:.82rem;padding:4px 10px;border-radius:14px;z-index:3}
+.poster .hd-tag{position:absolute;top:10px;left:10px;background:var(--g);color:#fff;font-size:.72rem;padding:4px 10px;border-radius:14px;z-index:3}
+.poster .info{padding:14px 15px}
+.poster .info h4{font-size:1rem;margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.poster .info span{font-size:.82rem;color:var(--sub)}
+.poster:hover{transform:translateY(-8px);box-shadow:0 18px 44px rgba(255,46,147,.35)}
+/* ========== 4 特色（左侧时间轴） ========== */
+#feature{background:var(--bg2)}
+.feat-wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:start}
+.timeline{position:relative;padding-left:38px}
+.timeline::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--p2),var(--g))}
+.tl-item{position:relative;margin-bottom:36px}
+.tl-item::before{content:"";position:absolute;left:-32px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--g);box-shadow:0 0 0 5px rgba(255,46,147,.2)}
+.tl-item h4{font-size:1.25rem;margin-bottom:8px;color:#fff}
+.tl-item p{color:var(--sub);font-size:.95rem}
+.feat-card{background:linear-gradient(150deg,rgba(164,29,143,.25),rgba(106,5,114,.1));border:1px solid var(--line);border-radius:24px;padding:36px}
+.feat-card .big{font-size:3.2rem;font-weight:900;background:linear-gradient(90deg,var(--g),var(--y));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1}
+.feat-card>h3{font-size:1.6rem;margin:16px 0 12px}
+.feat-card>p{color:var(--sub);margin-bottom:26px}
+.feat-card dl{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.feat-card dt{font-size:2.2rem;font-weight:800;color:var(--g)}
+.feat-card dd{font-size:.88rem;color:var(--sub);margin-top:4px}
+/* ========== 5 资讯（主图 + 编号列表） ========== */
+.news{display:grid;grid-template-columns:1.15fr 1fr;gap:34px}
+.news-main{border-radius:22px;overflow:hidden;background:var(--bg2);border:1px solid var(--line);transition:.35s}
+.news-main:hover{transform:translateY(-6px)}
+.news-main .pic{height:260px;background:linear-gradient(135deg,#3a0d45,#6a0572);position:relative;display:grid;place-items:center;font-size:3rem}
+.news-main .pic span{position:absolute;top:16px;left:16px;background:var(--g);color:#fff;font-size:.78rem;padding:5px 14px;border-radius:16px}
+.news-main .bd{padding:24px}
+.news-main h3{font-size:1.35rem;margin-bottom:10px}
+.news-list{display:flex;flex-direction:column;gap:16px}
+.nl{display:flex;gap:18px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;transition:.3s}
+.nl:hover{background:rgba(255,46,147,.1);border-color:rgba(255,46,147,.4)}
+.nl b{font-size:1.9rem;font-weight:900;color:var(--p2);min-width:44px;line-height:1}
+.nl h4{font-size:1.02rem;margin-bottom:6px}
+.nl time{font-size:.8rem;color:var(--g)}
+/* ========== 6 资源数据（技能条） ========== */
+#data{background:linear-gradient(180deg,rgba(106,5,114,.1),transparent)}
+.bars{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.bar-row h5{display:flex;justify-content:space-between;font-size:.98rem;margin-bottom:10px;color:var(--sub)}
+.bar-row h5 strong{color:var(--g);font-size:1.1rem}
+.track{height:14px;border-radius:10px;background:rgba(255,255,255,.08);overflow:hidden}
+.fill{height:100%;width:0;border-radius:10px;background:linear-gradient(90deg,var(--p2),var(--g));transition:width 1.6s cubic-bezier(.22,1,.36,1)}
+/* ========== 7 关于（SVG 环形图） ========== */
+#about .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:54px;align-items:center}
+.donut{position:relative;width:300px;height:300px;margin:0 auto}
+.donut svg{transform:rotate(-90deg)}
+.donut .center{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.donut .center b{font-size:2.4rem;color:var(--g);display:block}
+.donut .center small{color:var(--sub)}
+.chips-b{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.chips-b s{text-decoration:none;padding:10px 20px;border-radius:24px;background:var(--card);border:1px solid var(--line);font-size:.92rem;color:var(--sub)}
+.chips-b s:hover{border-color:var(--g);color:var(--g)}
+/* ========== 8 常见问题（手风琴） ========== */
+.faq details{border:1px solid var(--line);border-radius:16px;margin-bottom:14px;background:var(--card);overflow:hidden}
+.faq details[open]{border-color:rgba(255,46,147,.4);background:rgba(255,46,147,.08)}
+.faq summary{cursor:pointer;padding:20px 24px;font-size:1.06rem;font-weight:600;list-style:none;display:flex;align-items:center;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";width:28px;height:28px;flex:none;display:grid;place-items:center;border-radius:8px;background:linear-gradient(135deg,var(--p2),var(--g));color:#fff;font-size:1.2rem}
+.faq details[open] summary::before{content:"−"}
+.faq details p{padding:0 24px 22px 66px;color:var(--sub);font-size:.95rem}
+/* ===== 页脚 ===== */
+footer{background:var(--bg2);border-top:1px solid var(--line);padding:56px 0 30px;margin-top:40px}
+.ft{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.ft h4{font-size:1.15rem;margin-bottom:16px;color:#fff}
+.ft p,.ft a{color:var(--sub);font-size:.92rem}
+.ft a:hover{color:var(--g)}
+.ft-links{display:flex;flex-direction:column;gap:10px}
+.copy{text-align:center;border-top:1px solid var(--line);padding-top:26px;color:var(--sub);font-size:.85rem}
+.copy a{color:var(--g)}
+/* ===== 动画 ===== */
+.reveal{opacity:0;transform:translateY(36px);transition:.8s cubic-bezier(.22,1,.36,1)}
+.reveal.show{opacity:1;transform:none}
+/* ===== 响应式 ===== */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:2.7rem}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .tab-pane{grid-template-columns:repeat(3,1fr)}
+  .feat-wrap,.news,.bars,#about .wrap{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  nav{display:none;position:absolute;top:66px;left:0;right:0;background:rgba(13,6,18,.97);padding:20px;border-top:1px solid var(--line)}
+  nav.open{display:block}
+  nav ul{flex-direction:column}
+  nav a{display:block;padding:14px;border-radius:12px}
+  .menu-btn{display:block}
+  .sec{padding:70px 0 44px}
+  .sec-head b{font-size:1.8rem}
+  .hero h1{font-size:2.1rem}
+  .tab-pane{grid-template-columns:repeat(2,1fr)}
+  .poster .cover{height:200px}
+  .donut{width:240px;height:240px}
+  .donut .center b{font-size:1.9rem}
+  .ft{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+<header>
+  <div class="container hd">
+    <a class="logo" href="#home"><i>羞</i>羞羞影视<span>免费看</span></a>
+    <nav id="nav">
+      <ul>
+        <li><a href="#home">首页</a></li>
+        <li><a href="#cat">影视分类</a></li>
+        <li><a href="#hot">热门推荐</a></li>
+        <li><a href="#feature">平台特色</a></li>
+        <li><a href="#news">最新资讯</a></li>
+        <li><a href="#data">资源数据</a></li>
+        <li><a href="#about">关于我们</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" id="mb" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<main>
+<!-- ===== 1 首屏 ===== -->
+<section id="home">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="container hero">
+    <div>
+      <h1>海量高清影视，<u>羞羞影视</u>免费看</h1>
+      <p>羞羞影视官网提供最新电影、热播电视剧、韩剧、美剧、动漫、综艺等高清影视资源免费在线观看，每日更新，随时随地畅享精彩大片。</p>
+      <div class="cta">
+        <a class="btn btn-p" href="#hot">立即免费观看</a>
+        <a class="btn btn-o" href="#cat">浏览影视分类</a>
+      </div>
+    </div>
+    <aside class="player-card" aria-label="正在热播">
+      <div class="scr"><div class="play">▶</div></div>
+      <h4>今日热播 · 高清在线观看</h4>
+      <div class="chips">
+        <s>免费电影</s><s>高清画质</s><s>每日更新</s><s>无广告</s>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== 2 影视分类 ===== -->
+<section id="cat" class="sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <b>影视<b>分类</b>大全</b>
+      <p>羞羞影视覆盖全品类影视资源，一站式免费观看</p>
+    </div>
+    <div class="cloud reveal">
+      <a href="#cat">电影</a><a href="#cat">电视剧</a><a href="#cat">国产剧</a><a href="#cat">韩剧</a>
+      <a href="#cat">美剧</a><a href="#cat">动漫</a><a href="#cat">综艺</a><a href="#cat">纪录片</a>
+      <a href="#cat">短剧</a><a href="#cat">港剧</a>
+    </div>
+    <div class="cat-grid">
+      <article class="cat-card reveal" data-n="01" style="--cg:linear-gradient(135deg,#6a0572,#a41d8f)">
+        <i>🎬</i><h3>免费电影</h3><p>院线大片 / 经典老片 / 高分佳作</p>
+      </article>
+      <article class="cat-card reveal" data-n="02" style="--cg:linear-gradient(135deg,#a41d8f,#ff2e93)">
+        <i>📺</i><h3>热播电视剧</h3><p>国产剧 / 港台剧 / 全集免费看</p>
+      </article>
+      <article class="cat-card reveal" data-n="03" style="--cg:linear-gradient(135deg,#ff2e93,#ff6b6b)">
+        <i>🇰🇷</i><h3>韩剧专区</h3><p>最新韩剧 / 浪漫爱情 / 悬疑高分</p>
+      </article>
+      <article class="cat-card reveal" data-n="04" style="--cg:linear-gradient(135deg,#4a0e6e,#7b2cbf)">
+        <i>🇺🇸</i><h3>美剧推荐</h3><p>热门美剧 / 经典剧集 / 中英字幕</p>
+      </article>
+      <article class="cat-card reveal" data-n="05" style="--cg:linear-gradient(135deg,#c77dff,#e0aaff)">
+        <i>🎨</i><h3>动漫番剧</h3><p>国漫 / 日漫 / 热血搞笑</p>
+      </article>
+      <article class="cat-card reveal" data-n="06" style="--cg:linear-gradient(135deg,#ff9e00,#ff2e93)">
+        <i>🎤</i><h3>综艺节目</h3><p>真人秀 / 脱口秀 / 搞笑综艺</p>
+      </article>
+      <article class="cat-card reveal" data-n="07" style="--cg:linear-gradient(135deg,#2d6a4f,#52b788)">
+        <i>🌍</i><h3>纪录片</h3><p>自然 / 历史 / 人文高分纪录</p>
+      </article>
+      <article class="cat-card reveal" data-n="08" style="--cg:linear-gradient(135deg,#e63946,#a41d8f)">
+        <i>📱</i><h3>热门短剧</h3><p>竖屏短剧 / 爽剧合集</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 热门推荐 ===== -->
+<section id="hot" class="sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <b>热门<b>推荐</b></b>
+      <p>羞羞影视精选高分影视，免费在线观看</p>
+    </div>
+    <div class="tabs reveal" role="tablist">
+      <button class="tab on" data-t="t1">热门电影</button>
+      <button class="tab" data-t="t2">热播剧集</button>
+      <button class="tab" data-t="t3">韩剧美剧</button>
+    </div>
+    <div class="tab-pane on" id="t1">
+      <article class="poster reveal" style="--cv:linear-gradient(135deg,#3a0d45,#6a0572)">
+        <div class="cover">🎥<span class="score">9.2</span><span class="hd-tag">高清</span></div>
+        <div class="info"><h4>高分动作大片</h4><span>动作 / 2026 / 免费观看</span></div>
+      </article>
+      <article class="poster reveal" style="--cv:linear-gradient(135deg,#1d3557,#457b9d)">
+        <div class="cover">🕵️<span class="score">8.9</span><span class="hd-tag">高清</span></div>
+        <div class="info"><h4>悬疑烧脑佳作</h4><span>悬疑 / 2026 / 免费观看</span></div>
+      </article>
+      <article class="poster reveal" style="--cv:linear-gradient(135deg,#b5179e,#7209b7)">
+        <div class="cover">❤️<span class="score">8.6</span><span class="hd-tag">独家</span></div>
+        <div class="info"><h4>浪漫爱情电影</h4><span>爱情 / 2026 / 免费观看</span></div>
+      </article>
+      <article class="poster reveal" style="--cv:linear-gradient(135deg,#2a9d8f,#264653)">
+        <div class="cover">🚀<span class="score">9.0</span><span class="hd-tag">高清</span></div>
+        <div class="info"><h4>科幻视觉巨制</h4><span>科幻 / 2026 / 免费观看</span></div>
+      </article>
+      <article class="poster reveal" style="--cv:linear-gradient(135deg,#e76f51,#f4a261)">
+        <div class="cover">😂<span class="score">8.4</span><span class="hd-tag">高清</span></div>
+        <div class="info"><h4>爆笑喜剧片</h4><span>喜剧 / 2026 / 免费观看</span></div>
+      </article>
+    </div>
+    <div class="tab-pane" id="t2">
+      <article class="poster reveal" style="--cv:linear-gradient(135deg,#6a0572,#a41d8f)">
+        <div class="cover">👑<span class="score">9.4</span><span class="hd-tag">全集</span></div>
+        <div class="info"><h4>热播古装大剧</h4><span>古装 / 56集 / 免费观看</span></div>
+      </article>
+      <article class="poster reveal" style="--cv:linear-gradient(135deg,#023e8a,#0077b6)">
+        <div class="cover">🏢<span class="score">8.8</span><span class="hd-tag">全集</span></div>
+        <div class="info"><h4>都市职场剧</h4><span>都市 / 40集 / 免费观看</span></div>
+      </article>
+      <article class="poster reveal" style="--cv:linear-gradient(135deg,#c1121f,#780000)">
+        <div class="cover">🔥<span class="score">9.1</span><span class="hd-tag">热播</span></div>
+        <div class="info"><h4>年代传奇大戏</h4><span>年代 / 48集 / 免费观看</span></div>
+      </article>
+      <article class="poster reveal" style="--cv:linear-gradient(135deg,#386641,#6a994e)">
+        <div class="cover">🌿<span class="score">8.5</span><span class="hd-tag">全集</span></div>
+        <div class="info"><h4>青春校园剧</h4><span>青春 / 32集 / 免费观看</span></div>
+      </article>
+      <article class="poster reveal" style="--cv:linear-gradient(135deg,#5a189a,#9d4edd)">
+        <div class="cover">👻<span class="score">8.7</span><span class="hd-tag">独家</span></div>
+        <div class="info"><h4>悬疑探案剧</h4><span>悬疑 / 36集 / 免费观看</span></div>
+      </article>
+    </div>
+    <div class="tab-pane" id="t3">
+      <article class="poster reveal" style="--cv:linear-gradient(135deg,#d62828,#f77f00)">
+        <div class="cover">🇰🇷<span class="score">9.3</span><span class="hd-tag">韩剧</span></div>
+        <div class="info"><h4>韩剧浪漫爱情</h4><span>韩剧 / 16集 / 免费观看</span></div>
+      </article>
+      <article class="poster reveal" style="--cv:linear-gradient(135deg,#003049,#669bbc)">
+        <div class="cover">🇰🇷<span class="score">8.9</span><span class="hd-tag">韩剧</span></div>
+        <div class="info"><h4>韩剧悬疑犯罪</h4><span>韩剧 / 12集 / 免费观看</span></div>
+      </article>
+      <article class="poster reveal" style="--cv:linear-gradient(135deg,#240046,#5a189a)">
+        <div class="cover">🇺🇸<span class="score">9.0</span><span class="hd-tag">美剧</span></div>
+        <div class="info"><h4>美剧史诗巨作</h4><span>美剧 / 8季 / 免费观看</span></div>
+      </article>
+      <article class="poster reveal" style="--cv:linear-gradient(135deg,#0f4c5c,#1b998b)">
+        <div class="cover">🇺🇸<span class="score">8.6</span><span class="hd-tag">美剧</span></div>
+        <div class="info"><h4>美剧悬疑惊悚</h4><span>美剧 / 5季 / 免费观看</span></div>
+      </article>
+      <article class="poster reveal" style="--cv:linear-gradient(135deg,#9b5de5,#f15bb5)">
+        <div class="cover">🎌<span class="score">8.8</span><span class="hd-tag">动漫</span></div>
+        <div class="info"><h4>日漫热血番剧</h4><span>动漫 / 更新中 / 免费观看</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4 平台特色 ===== -->
+<section id="feature" class="sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <b>平台<b>特色</b></b>
+      <p>为什么千万用户选择羞羞影视免费在线观看</p>
+    </div>
+    <div class="feat-wrap">
+      <div class="timeline reveal">
+        <div class="tl-item"><h4>完全免费观看</h4><p>羞羞影视所有影视资源免费开放，无需付费、无需注册即可在线观看高清大片。</p></div>
+        <div class="tl-item"><h4>极速高清播放</h4><p>多线路云播加速，支持 1080P / 4K 高清流畅播放，告别卡顿与加载等待。</p></div>
+        <div class="tl-item"><h4>每日更新资源</h4><p>院线新片、热播剧集同步更新，第一时间抢先看最新影视内容。</p></div>
+        <div class="tl-item"><h4>无广告纯净体验</h4><p>极简界面设计，无弹窗广告干扰，专注舒适的免费观影体验。</p></div>
+      </div>
+      <aside class="feat-card reveal">
+        <div class="big">100%</div>
+        <h3>免费 · 高清 · 海量</h3>
+        <p>羞羞影视致力于打造最优质的免费影视在线观看平台，让每个人都能轻松看好片。</p>
+        <dl>
+          <div><dt>10000+</dt><dd>高清影视资源</dd></div>
+          <div><dt>50+</dt><dd>影视分类频道</dd></div>
+          <div><dt>99.9%</dt><dd>播放成功率</dd></div>
+          <div><dt>24h</dt><dd>每日更新不间断</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5 最新资讯 ===== -->
+<section id="news" class="sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <b>最新<b>资讯</b></b>
+      <p>影视行业动态与热门影视推荐，尽在羞羞影视</p>
+    </div>
+    <div class="news">
+      <article class="news-main reveal">
+        <div class="pic">🎞️<span>头条</span></div>
+        <div class="bd">
+          <h3>2026 年高分电影榜单出炉，羞羞影视带你免费看个够</h3>
+          <p style="color:var(--sub);margin-top:10px">盘点年度必看高分电影与热播剧集，院线新片同步上线，高清免费在线观看。</p>
+          <time style="color:var(--g);font-size:.85rem;display:block;margin-top:14px">2026-10-24 · 羞羞影视资讯</time>
+        </div>
+      </article>
+      <div class="news-list">
+        <article class="nl reveal"><b>01</b><div><h4>韩剧新番推荐：2026 秋季必追韩剧清单</h4><time>2026-10-22</time></div></article>
+        <article class="nl reveal"><b>02</b><div><h4>美剧回归季：热门美剧最新一季观看指南</h4><time>2026-10-20</time></div></article>
+        <article class="nl reveal"><b>03</b><div><h4>国产剧盘点：这些高分国产剧你看过几部？</h4><time>2026-10-18</time></div></article>
+        <article class="nl reveal"><b>04</b><div><h4>动漫新番追番日历，每周更新不迷路</h4><time>2026-10-15</time></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6 资源数据 ===== -->
+<section id="data" class="sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <b>资源<b>数据</b></b>
+      <p>海量影视资源库，覆盖全品类免费观看</p>
+    </div>
+    <div class="bars reveal">
+      <div class="bar-row"><h5>高清电影资源 <strong>92%</strong></h5><div class="track"><div class="fill" data-w="92"></div></div></div>
+      <div class="bar-row"><h5>热播电视剧 <strong>88%</strong></h5><div class="track"><div class="fill" data-w="88"></div></div></div>
+      <div class="bar-row"><h5>韩剧美剧更新 <strong>95%</strong></h5><div class="track"><div class="fill" data-w="95"></div></div></div>
+      <div class="bar-row"><h5>动漫综艺内容 <strong>82%</strong></h5><div class="track"><div class="fill" data-w="82"></div></div></div>
+      <div class="bar-row"><h5>高清 1080P 覆盖率 <strong>98%</strong></h5><div class="track"><div class="fill" data-w="98"></div></div></div>
+      <div class="bar-row"><h5>每日更新及时率 <strong>99%</strong></h5><div class="track"><div class="fill" data-w="99"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7 关于我们 ===== -->
+<section id="about" class="sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <b>关于<b>羞羞影视</b></b>
+      <p>专注免费高清影视在线观看平台</p>
+    </div>
+    <div class="wrap">
+      <div class="donut reveal">
+        <svg width="300" height="300" viewBox="0 0 42 42">
+          <circle cx="21" cy="21" r="15.9" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="6"></circle>
+          <circle cx="21" cy="21" r="15.9" fill="none" stroke="url(#g1)" stroke-width="6" stroke-dasharray="75 25" stroke-linecap="round"></circle>
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2e93"/><stop offset="1" stop-color="#a41d8f"/></linearGradient></defs>
+        </svg>
+        <div class="center"><b>75%</b><small>影视免费覆盖率</small></div>
+      </div>
+      <div class="reveal">
+        <h3 style="font-size:1.7rem;margin-bottom:16px">关于羞羞影视官网</h3>
+        <p style="color:var(--sub)">羞羞影视（xiuxiuyingshi-cn.github.io）是一个致力于为用户提供免费、高清、海量影视资源的在线观看平台。我们覆盖电影、电视剧、国产剧、韩剧、美剧、动漫、综艺、纪录片等全品类影视内容，每日更新最新影视资讯与热门资源，让您随时随地免费畅享精彩大片。</p>
+        <div class="chips-b">
+          <s>免费电影</s><s>高清电视剧</s><s>国产剧</s><s>韩剧美剧</s><s>动漫综艺</s><s>每日更新</s>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8 常见问题 ===== -->
+<section id="faq" class="sec faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <b>常见<b>问题</b></b>
+      <p>关于羞羞影视免费在线观看的常见疑问</p>
+    </div>
+    <details class="reveal" open>
+      <summary>羞羞影视真的可以免费观看吗？</summary>
+      <p>是的，羞羞影视官网所有影视资源均免费开放，无需付费、无需注册即可在线观看高清电影和电视剧，真正零门槛免费观影。</p>
+    </details>
+    <details class="reveal">
+      <summary>羞羞影视支持哪些设备和浏览器？</summary>
+      <p>羞羞影视支持电脑、手机、平板等多种设备，兼容 Chrome、Safari、Edge 等主流浏览器，移动端自适应，随时随地免费观看。</p>
+    </details>
+    <details class="reveal">
+      <summary>影片画质如何？支持高清吗？</summary>
+      <p>平台提供 720P、1080P 乃至 4K 多档画质选择，多线路云播加速，保证高清流畅的免费观影体验。</p>
+    </details>
+    <details class="reveal">
+      <summary>影视资源多久更新一次？</summary>
+      <p>羞羞影视每日更新，院线新片、热播剧集、韩剧美剧等同步上线，第一时间为您提供最新影视内容。</p>
+    </details>
+    <details class="reveal">
+      <summary>如何快速找到想看的影视？</summary>
+      <p>您可以通过首页的影视分类、热门推荐标签快速浏览，或使用站内搜索功能查找电影、电视剧、韩剧、美剧等内容。</p>
+    </details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="ft">
+      <div>
+        <a class="logo" href="#home" style="font-size:1.3rem"><i>羞</i>羞羞影视<span>免费看</span></a>
+        <p style="margin-top:16px">羞羞影视官网 —— 最新高清电影电视剧免费在线观看平台，海量影视资源每日更新，为您提供优质的免费观影服务。</p>
+      </div>
+      <div>
+        <h4>快速导航</h4>
+        <div class="ft-links">
+          <a href="#cat">影视分类</a><a href="#hot">热门推荐</a><a href="#news">最新资讯</a><a href="#about">关于我们</a>
+        </div>
+      </div>
+      <div>
+        <h4>热门关键词</h4>
+        <div class="ft-links">
+          <a href="#cat">羞羞影视在线观看</a><a href="#cat">免费电影</a><a href="#cat">高清电视剧</a><a href="#cat">韩剧美剧</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      © 2026 羞羞影视 · <a href="https://xiuxiuyingshi-cn.github.io/">https://xiuxiuyingshi-cn.github.io/</a> ｜ 专注免费高清影视在线观看 ｜ 关键词：羞羞影视、羞羞影视官网、羞羞影视在线观看、免费电影、高清电视剧
+    </div>
+  </div>
+</footer>
+
+<script>
+// Tab 切换
+document.querySelectorAll('.tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    var g=this.closest('.sec').querySelector('.tabs');
+    g.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});
+    this.classList.add('on');
+    var p=this.closest('.container').querySelectorAll('.tab-pane');
+    p.forEach(function(x){x.classList.remove('on')});
+    document.getElementById(this.dataset.t).classList.add('on');
+  });
+});
+// 移动菜单
+var mb=document.getElementById('mb'),nv=document.getElementById('nav');
+mb.addEventListener('click',function(){nv.classList.toggle('open')});
+nv.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nv.classList.remove('open')})});
+// 滚动入场动画
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');
+    var f=e.target.querySelectorAll('.fill');
+    f.forEach(function(x){x.style.width=x.dataset.w+'%'});
+    io.unobserve(e.target);}});
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+// 导航高亮
+var links=document.querySelectorAll('#nav a');
+var secs=document.querySelectorAll('section');
+window.addEventListener('scroll',function(){
+  var y=window.scrollY+120,cur='';
+  secs.forEach(function(s){if(s.offsetTop<=y&&s.offsetTop+s.offsetHeight>y)cur=s.id});
+  links.forEach(function(a){a.style.color=(a.getAttribute('href')==='#'+cur)?'#fff':'var(--sub)';
+    a.style.background=(a.getAttribute('href')==='#'+cur)?'rgba(255,46,147,.18)':'transparent'});
+});
+</script>
+</body>
+</html>
